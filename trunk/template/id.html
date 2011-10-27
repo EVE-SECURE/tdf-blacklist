@@ -1,0 +1,57 @@
+<!-- BEGIN header -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="/scripts/prototype.js"></script>
+<script type="text/javascript" src="/scripts/effects.js"></script>
+<script type="text/javascript" src="/scripts/accordion.js"></script>
+<script type="text/javascript" src="template/id.js"></script>
+<link href="template/id.css" rel="stylesheet" type="text/css" media="all" />
+<title>{TITLE}</title>
+</head>
+
+<body>
+<!-- END header -->
+
+<!-- BEGIN bl_entry -->
+<div class="BL_Container">
+	<div class="BL_NavBar">
+		<a class="BL_Name textLink" onclick="CCPEVE.showInfo(1373, {BL_CHAR_ID})">{BL_CHAR_NAME}</a> | 
+		<a class="BL_Personal textLink" onclick="CCPEVE.addContact({BL_CHAR_ID})">Personal Contact</a> | 
+		<a class="BL_Corp textLink" onclick="CCPEVE.addCorpContact({BL_CHAR_ID})">Corporate Contact</a>
+		<span class="BL_Toggle textLink" id="BL_Toggle_{BL_CHAR_ID}_{BL_UUID}">[+]</span>
+	</div>
+	<div class="BL_Content" style="display:none;" id="BL_Content_{BL_CHAR_ID}_{BL_UUID}">
+		<table>
+			<tr>
+				<td><img src="{BL_CHAR_IMG}"></td>
+				<td><span><span style="font-style:italic"><strong>Character Ban:</strong></span><br />{BL_CHAR_INFO}</span></td>
+			</tr>
+		</table>
+		<hr />
+		<span>Reason(s) for ban:</span><br />
+		<span class="BL_Info">{BL_CHAR_REASON}</span>
+	</div>
+	<script type="text/javascript">
+	window.onload = function() {
+		{BL_JS_LOAD}
+	}
+	</script>
+</div>
+<!-- END bl_entry -->
+
+{CONTENT}
+
+<!-- BEGIN footer -->
+<br /><br />
+<form action="id.php" method="post">
+	<input class="input2" type="text" size="50" name="input" value="{BL_INPUT_TEXT}"/>
+	<input class="button2" type="submit" />
+</form>
+</body>
+</html>
+{BL_DEBUG}
+{BL_CACHED}
+{BL_EXE_TIME}
+<!-- END footer -->
